@@ -1,5 +1,4 @@
-export class Order {
-   
+export class Order {   
     SalesOrder?: string ;
     SalesOrderItem?: string;
     auart?:string;

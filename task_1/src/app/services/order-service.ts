@@ -32,7 +32,7 @@ export class OrderService {
 
 
    getOrderBySalesOrder(salOrd: string) {
-    return this.http.get<any[] >(this.url).pipe(
+    return this.http.get<Order[] >(this.url).pipe(
       map(() =>this.a.filter(o => o.SalesOrder?.includes(salOrd))),
       catchError((err) =>{
         console.log(err)

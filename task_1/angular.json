@@ -22,10 +22,31 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/css_variables.css",
+                "input": "./node_modules/@sap-theming/theming-base-content/content/Base/baseLib/",
+                "output": "./assets/theming-base/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/",
+                "output": "./assets/theming-base/baseTheme/fonts/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/fonts/",
+                "output": "./assets/theming-base/sap_horizon/fonts/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/fundamental-styles/dist/theming/",
+                "output": "./assets/fundamental-styles-theming/"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/@fundamental-ngx/core/styles/fundamental-ngx-core.css"
             ]
           },
           "configurations": {

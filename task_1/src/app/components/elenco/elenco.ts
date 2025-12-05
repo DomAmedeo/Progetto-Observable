@@ -2,11 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Order } from '../../classess/order';
 import { OrderService } from '../../services/order-service';
-import { debounceTime, from, fromEvent, map, switchMap } from 'rxjs';
+import { debounceTime,  fromEvent, map, switchMap } from 'rxjs';
+import {  TableModule , FormModule} from '@fundamental-ngx/core';
+
+
 
 @Component({
   selector: 'app-elenco',
-  imports: [CommonModule],
+  imports: [CommonModule , TableModule, FormModule],
   templateUrl: './elenco.html',
   styleUrl: './elenco.css',
 })
