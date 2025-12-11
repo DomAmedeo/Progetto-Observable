@@ -1,4 +1,40 @@
+<fd-layout-panel>
+    <fd-layout-panel-header>
+        <fd-layout-panel-head>
+            <fd-layout-grid>
+                <div fdLayoutGridRow>
+                    <div [fdLayoutGridCol]="3">
+                        <button fd-button  fdType="transparent" glyph="undo" ariaLabel="Transparent undo" ></button>
+                    </div>
+
+                    <div [fdLayoutGridCol]="6">
+                        <h5 fd-layout-panel-title>BIN TO BIN</h5>
+                    </div>
+
+                    <div [fdLayoutGridCol]="3">
+                        <button fd-button  fdType="transparent" glyph="home" [routerLink]="['home']" ariaLabel="Transparent home"></button>
+                    </div>
+                </div>
+            </fd-layout-grid>
+            <fdp-icon-tab-bar [tabsConfig]="items" iconTabType="icon"></fdp-icon-tab-bar>
+        </fd-layout-panel-head>
+    </fd-layout-panel-header>
+    <fd-layout-panel-body style="background-color: white;">
+        <router-outlet />
+    </fd-layout-panel-body>
+    <fd-layout-panel-footer>
+        <fd-layout-grid [noGap]="true">
+            <div fdLayoutGridRow>
+                <div [fdLayoutGridCol]="6">
+                    <button fd-button label="CLEAR" fdType="negative" glyph="decline" ariaLabel="Negative Filter"></button>
+                </div>
+                <div [fdLayoutGridCol]="6">
+                    <button fd-button label="POST" fdType="positive" glyph="cart-approval" ariaLabel="Positive Filter"></button>
+                </div>
+            </div>
+        </fd-layout-grid>
+    </fd-layout-panel-footer>
+</fd-layout-panel>
 
 
 
-<router-outlet />
