@@ -1,15 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Order } from '../../classess/order';
 import { OrderService } from '../../services/order-service';
 import { debounceTime,  fromEvent, map, switchMap } from 'rxjs';
-import {  TableModule , FormModule} from '@fundamental-ngx/core';
+import {  TableModule } from '@fundamental-ngx/core';
+import { FormsModule } from '@angular/forms';
+import { FormItemComponent, FormLabelComponent } from '@fundamental-ngx/core/form';
+import { InputGroupModule } from '@fundamental-ngx/core/input-group';
+
+
 
 
 
 @Component({
   selector: 'app-elenco',
-  imports: [CommonModule , TableModule, FormModule],
+  imports: [CommonModule , TableModule,  FormsModule, FormItemComponent, FormLabelComponent, InputGroupModule],
   templateUrl: './elenco.html',
   styleUrl: './elenco.css',
 })
@@ -19,8 +24,7 @@ export class Elenco {
 
   constructor(private service: OrderService){}
 
-  //con ViewChild ho un riferimento all'elemento del dom dinamico in maniera diretta
-  @ViewChild('searchBox') searchInput! : ElementRef
+  
 
 
   //inserisco value perchè value è un array Order cosi risolvo l errore:
@@ -34,13 +38,21 @@ export class Elenco {
 
   
   ngAfterViewInit(){
-    fromEvent(this.searchInput.nativeElement, 'input').pipe(
+    const input = document.getElementById("fd-input-group-search-label-2");
+    if(input){
+      const input$ =  fromEvent(input, 'fd-input-group-search-label-2').pipe(
       debounceTime(500),
       map((evt : any) => String(evt.target.value)),
       switchMap((ord : string) => this.service.getOrderBySalesOrder(ord))
     )
-    .subscribe(ris =>{
+    input$.subscribe(ris =>{
       this.elenco = ris;
     })
+    }
+
   }
+
+
+
+
 }

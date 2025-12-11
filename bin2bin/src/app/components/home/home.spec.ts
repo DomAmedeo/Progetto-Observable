@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProvaSAPF } from './prova-sapf';
+import { Home } from './home';
 
-describe('ProvaSAPF', () => {
-  let component: ProvaSAPF;
-  let fixture: ComponentFixture<ProvaSAPF>;
+describe('Home', () => {
+  let component: Home;
+  let fixture: ComponentFixture<Home>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProvaSAPF]
+      imports: [Home]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProvaSAPF);
+    fixture = TestBed.createComponent(Home);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
