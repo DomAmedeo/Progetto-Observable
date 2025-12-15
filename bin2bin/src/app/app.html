@@ -16,10 +16,25 @@
                     </div>
                 </div>
             </fd-layout-grid>
-            <fdp-icon-tab-bar [tabsConfig]="items" iconTabType="icon"></fdp-icon-tab-bar>
+
+            <fd-segmented-button>
+                <div [fdLayoutGridCol]="4">
+                    <button fd-button label="Home" fdType="attention" glyph="journey-arrive" [routerLink]="['home']" ariaLabel="Transparent home"></button>
+                </div>
+                <div [fdLayoutGridCol]="4">
+                    <button fd-button label="List" fdType="attention" glyph="list" [routerLink]="['list']" ariaLabel="Transparent home"></button>
+                </div>
+                <div [fdLayoutGridCol]="4">
+                    <button fd-button label="Log" fdType="attention" glyph="activities" [routerLink]="['log']" ariaLabel="Transparent home"></button>
+                </div>
+            </fd-segmented-button>
+            <!-- <fdp-icon-tab-bar [tabsConfig]="items" iconTabType="icon"  id="TabBar"></fdp-icon-tab-bar>            -->
         </fd-layout-panel-head>
     </fd-layout-panel-header>
-    <fd-layout-panel-body style="background-color: white;">
+    <fd-layout-panel-body>
+        <!-- <ul *ngFor="let i of items">
+            <ul><a href="/{{i.id}}">{{i.id}}</a></ul>
+        </ul> -->
         <router-outlet />
     </fd-layout-panel-body>
     <fd-layout-panel-footer>
@@ -35,6 +50,3 @@
         </fd-layout-grid>
     </fd-layout-panel-footer>
 </fd-layout-panel>
-
-
-
